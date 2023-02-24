@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"html"
+	"log"
 	"net/http"
 )
 
@@ -17,6 +18,7 @@ func HelloHTTP(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	log.Printf("GET --> %v", d)
 	if d.Name == "" {
 		fprintf(w, "Hello, World!")
 		return

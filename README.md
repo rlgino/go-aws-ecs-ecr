@@ -5,6 +5,8 @@
 ### Build Docker image
 ```shell
 docker build -t golang-app:1.0 .
+# If you are running on Mac OS and M1 micro, you need to build with `buildx`
+docker buildx build --platform=linux/amd64 -t golang-app:1.0 .
 ```
 
 ### Create repository
